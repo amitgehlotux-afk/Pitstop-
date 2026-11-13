@@ -191,7 +191,8 @@ main { padding: 16px; max-width: 1200px; margin: 0 auto; }
 .sw-route { border-radius: 2px; background: linear-gradient(90deg, var(--tint-morning), var(--tint-afternoon), var(--tint-evening), var(--tint-night)); }
 .sw-box { background: #C8102E; }
 .sw-osm { background: var(--text); }
-.maplibregl-ctrl-attrib, .maplibregl-ctrl-attrib a { color: #1E1A16; }
+.maplibregl-ctrl-attrib { background: #FFFFFF !important; }
+.maplibregl-ctrl-attrib, .maplibregl-ctrl-attrib a { color: #1E1A16 !important; }
 .maplibregl-ctrl button { min-width: 44px; min-height: 44px; }
 
 /* Drive: big type, minimal chrome */
