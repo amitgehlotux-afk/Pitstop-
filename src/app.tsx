@@ -53,7 +53,7 @@ function Shell() {
         </a>
         <SkyBand />
         <header className="top">
-          <a className="brand" href="#/plan" aria-label="Pitstop, plan">
+          <a className="brand" href="#/plan">
             <span className="brand-mark" aria-hidden="true">P</span>Pitstop
           </a>
           <nav aria-label="Sections">

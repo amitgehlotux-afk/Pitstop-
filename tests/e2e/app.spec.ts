@@ -58,7 +58,7 @@ test('lock shows a Google Maps check with sources', async ({ page }) => {
   await mockApis(page);
   await plan(page);
   await page.locator('.box-window').first().getByRole('button', { name: 'Lock this stop' }).first().click();
-  await expect(page.getByText('From Google Maps via Gemini')).toBeVisible();
+  await expect(page.getByText('From Google Maps via Gemini', { exact: true })).toBeVisible();
   await expect(page.locator('.sources a').first()).toHaveAttribute('href', /^https:\/\//);
 });
 
@@ -106,7 +106,7 @@ for (const phase of ['morning', 'afternoon', 'evening', 'night'] as const) {
     await page.addInitScript((p) => localStorage.setItem('pitstop.theme', p), phase);
     await plan(page);
     await page.locator('.box-window').first().getByRole('button', { name: 'Lock this stop' }).first().click();
-    await expect(page.getByText('From Google Maps via Gemini')).toBeVisible();
+    await expect(page.getByText('From Google Maps via Gemini', { exact: true })).toBeVisible();
     for (const route of ['strategy', 'plan', 'drive', 'debrief']) {
       await page.evaluate((r) => (location.hash = `/${r}`), route);
       await page.waitForTimeout(700); // let the cross-fade finish
