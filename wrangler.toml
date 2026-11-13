@@ -1,0 +1,15 @@
+name = "pitstop"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-10-01"
+
+[vars]
+MAX_VERIFY_PER_DAY = "200"
+GEMINI_MODEL = "gemini-flash-latest"
+RATE_LIMIT_PER_MIN = "30"
+
+# Optional: KV gives exact daily caps and cross-colo caching. Without it, the Cache API is used.
+# [[kv_namespaces]]
+# binding = "PITSTOP_KV"
+# id = "<create with: wrangler kv namespace create PITSTOP_KV>"
+
+# Secrets (never in the client): wrangler pages secret put ORS_API_KEY / GEMINI_API_KEY

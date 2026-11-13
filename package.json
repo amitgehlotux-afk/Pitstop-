@@ -1,0 +1,38 @@
+{
+  "name": "pitstop",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Race strategy for Indian road trips: stints, pit stops and box calls.",
+  "scripts": {
+    "dev": "vite",
+    "dev:full": "npm run build && wrangler pages dev dist --compatibility-date=2026-10-01",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit && tsc -p functions/tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:a11y": "playwright test --trace off",
+    "check:contrast": "node scripts/contrast.mjs",
+    "check:secrets": "node scripts/check-secrets.mjs",
+    "deploy": "npm run build && npm run check:secrets && wrangler pages deploy dist --project-name pitstop"
+  },
+  "dependencies": {
+    "maplibre-gl": "^4.7.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "suncalc": "^1.9.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "@cloudflare/workers-types": "^4.20241022.0",
+    "@playwright/test": "^1.48.0",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "@types/suncalc": "^1.9.2",
+    "@vitejs/plugin-react": "^4.3.3",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10",
+    "vitest": "^2.1.4",
+    "wrangler": "^3.84.0"
+  }
+}
